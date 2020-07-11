@@ -1,0 +1,51 @@
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\appsettings.Development.json
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\appsettings.json
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\Properties\launchSettings.json
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\Lessons Learned Database.deps.json
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\Lessons Learned Database.runtimeconfig.json
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\Lessons Learned Database.runtimeconfig.dev.json
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\Lessons Learned Database.dll
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\Lessons Learned Database.pdb
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\Lessons Learned Database.Views.dll
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\bin\Release\netcoreapp2.1\Lessons Learned Database.Views.pdb
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.csprojAssemblyReference.cache
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.RazorAssemblyInfo.cache
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.RazorAssemblyInfo.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.AssemblyInfoInputs.cache
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.AssemblyInfo.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.TagHelpers.input.cache
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.TagHelpers.output.cache
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.RazorCoreGenerate.cache
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Lessons\Create.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Lessons\Delete.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Lessons\Details.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Lessons\Edit.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Lessons\Index.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Ratings\Create.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Ratings\Delete.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Ratings\Details.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Ratings\Edit.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Ratings\Index.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Shared\_searchPartial.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.RazorTargetAssemblyInfo.cache
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.RazorTargetAssemblyInfo.cs
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.Views.pdb
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.dll
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.pdb
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Lessons Learned Database.csproj.CopyComplete
+D:\Users\daimenrees\Source\Repos\damoenceno\Lessons-Learned-Database\obj\Release\netcoreapp2.1\Razor\Views\Shared\Articles.cshtml.g.cs

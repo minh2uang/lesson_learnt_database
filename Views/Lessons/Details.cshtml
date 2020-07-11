@@ -1,0 +1,104 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model Lessons_Learned_Database.Models.Lesson
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var total = (Model.DateEnd - Model.DateStart).TotalDays;
+
+}
+
+
+    <div>
+
+        <h2 style="color:#0A5389;"><b>@Html.DisplayFor(model => model.LessonTitle)</b></h2>
+        <i><h5 style="font-size:16px; margin-top:-5px"><b>@Html.DisplayFor(model => model.ProjectName)</b> - Total days: @total</h5></i>
+        <h5 style="font-size:14px;">
+            @Html.DisplayFor(model => model.DateStart) - @Html.DisplayFor(model => model.DateEnd) &nbsp; @if (User.Identity.IsAuthenticated)
+        {
+            <a style="font-size:13px; margin-top:-15px;" asp-action="Edit" asp-route-id="@Model.LessonId"><b>Edit</b></a>
+        }
+        else
+        {
+            <a style="font-size:13px; margin-top:-15px;" asp-area="Identity" asp-page="/Account/Login"><b>Log in to edit</b></a>
+        }
+        </h5>
+
+
+        <hr />
+        <div style="background-color:#F5F6F7; padding:5px 5px 5px 5px;">
+            <h6><b>Abstract</b></h6>
+            @Html.DisplayFor(model => model.Abstract)
+            <br />
+            <br />
+            <h6><b>Lesson Learned</b></h6>
+            @Html.DisplayFor(model => model.LessonsLearned)
+            <br />
+            <br />
+            <h6><b>Risks identifed during the @Html.DisplayFor(model => model.ProjectName) Project</b></h6>
+            @Html.DisplayFor(model => model.Risk)
+            <br />
+
+
+
+            <hr />
+
+
+            <div class="container">
+                <p style="font-weight:bold;" class="text-center">Project properties of: @Html.DisplayFor(model => model.ProjectName)</p>
+                <div class="row">
+                    <div class="col-sm">
+
+                        <p class="text-center" style="font-size:12px;"><b>Budget:</b> @Html.DisplayFor(model => model.Budget)</p>
+
+                    </div>
+
+                    <div class="col-sm">
+
+                        <p class="text-center" style="font-size:12px;"><b>Organization:</b> @Html.DisplayFor(model => model.Organization)</p>
+
+
+                    </div>
+
+                    <div class="col-sm">
+
+                        <p class="text-center" style="font-size:12px;"><b>Technology:</b> @Html.DisplayFor(model => model.Technology)</p>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm">
+
+                        <p class="text-center" style="font-size:12px;"><b>Persons Involved:</b> @Html.DisplayFor(model => model.Size)</p>
+
+                    </div>
+
+                    <div class="col-sm">
+
+                        <p class="text-center" style="font-size:12px;"><b>Project Outcome:</b> @Html.DisplayFor(model => model.ObjectiveAchievement)</p>
+
+
+                    </div>
+
+                    <div class="col-sm">
+
+                        <p class="text-center" style="font-size:12px;"><b>Stakeholders:</b> @Html.DisplayFor(model => model.Stakeholder)</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <center>
+                <a asp-action="Index">Back to List</a>
+            </center>
+        </div>
+
+    </div>
+

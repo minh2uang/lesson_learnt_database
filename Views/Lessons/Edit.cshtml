@@ -1,0 +1,137 @@
+﻿@model Lessons_Learned_Database.ViewModels.LessonEditViewModel
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Edit: <b><i>@Html.DisplayFor(model => model.Lesson.LessonTitle)</i></b></h4>
+<hr />
+<div class="form-group">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-row">
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.LessonTitle" class="control-label">Lesson Title</label>
+                <input asp-for="Lesson.LessonTitle" class="form-control" />
+                <span asp-validation-for="Lesson.LessonTitle " class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.ProjectName" class="control-label">Project Name</label>
+                <input asp-for="Lesson.ProjectName" class="form-control" />
+                <span asp-validation-for="Lesson.ProjectName" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.Organization" class="control-label">DoE/DoE Branch</label>
+                <input asp-for="Lesson.Organization" class="form-control" />
+                <span asp-validation-for="Lesson.Organization" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.Abstract" class="control-label">Abstract</label>
+                <textarea asp-for="Lesson.Abstract" class="form-control"></textarea>
+                <span asp-validation-for="Lesson.Abstract" class="text-danger"></span>
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col">
+
+                <label style="font-weight:bold;" asp-for="Lesson.LessonsLearned" class="control-label">Lesson learned</label>
+                <textarea asp-for="Lesson.LessonsLearned" class="form-control" rows="7"></textarea>
+                <span asp-validation-for="Lesson.LessonsLearned" class="text-danger"></span>
+
+            </div>
+        </div>
+        <br />
+
+        @* /*risk and outcome */ *@
+        <div class="form-row">
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.Size" class="control-label">Size of Project (People)</label>
+                <input asp-for="Lesson.Size" class="form-control" />
+                <span asp-validation-for="Lesson.Size" class="text-danger"></span>
+
+
+            </div>
+
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.ObjectiveAchievement" class="control-label">Project outcome</label>
+                <input asp-for="Lesson.ObjectiveAchievement" class="form-control" />
+                <span asp-validation-for="Lesson.ObjectiveAchievement" class="text-danger"></span>
+
+
+            </div>
+
+
+        </div>
+        @* start triple *@
+        <div class="form-row">
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.DateStart" class="control-label">Start date of Project</label>
+                <input asp-for="Lesson.DateStart" class="form-control" />
+                <span asp-validation-for="Lesson.DateStart" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.DateEnd" class="control-label">End date of Project</label>
+                <input asp-for="Lesson.DateEnd" class="form-control" />
+                <span asp-validation-for="Lesson.DateEnd" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.Budget" class="control-label">Budget</label>
+                <input asp-for="Lesson.Budget" class="form-control" />
+                <span asp-validation-for="Lesson.Budget" class="text-danger"></span>
+            </div>
+        </div>
+
+        @* Start triple *@
+
+        <div class="form-row">
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.Risk" class="control-label">Identifed risks</label>
+                <textarea asp-for="Lesson.Risk" class="form-control"></textarea>
+                <span asp-validation-for="Lesson.Risk" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label style="font-weight:bold;" asp-for="Lesson.Technology" class="control-label">Technology/s</label>
+                <textarea asp-for="Lesson.Technology" class="form-control"></textarea>
+                <span asp-validation-for="Lesson.Technology" class="text-danger"></span>
+
+            </div>
+
+            <div class="col">
+                <label asp-for="Lesson.Stakeholder" class="control-label">Stakeholder/s</label>
+                <textarea asp-for="Lesson.Stakeholder" class="form-control"></textarea>
+                <span asp-validation-for="Lesson.Stakeholder" class="text-danger"></span>
+            </div>
+
+        </div>
+
+
+        <div>
+            <input asp-for="Lesson.LessonId" value=@Model.Lesson.LessonId hidden />
+            <input asp-for="Lesson.UserId" value=@Model.Lesson.UserId hidden />
+        </div>
+
+
+        <div>
+            <center>
+                <span>
+                    <a asp-action="Index">Back to List  </a><span>|</span><span class="form-group">
+                        <input type="submit" class="text-primary" value="Save" style="border: none; background-color:transparent; color:blue; margin-left:-8px;" />
+                    </span>
+                </span>
+            </center>
+        </div>
+
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

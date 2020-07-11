@@ -1,0 +1,155 @@
+﻿@model Lessons_Learned_Database.ViewModels.LessonCreateViewModel
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create a Lesson!</h2>
+<p>Read the <a href="~/lib/User Guide.pdf">Guide</a> for help with creating a lesson</p>
+<hr />
+
+
+<form asp-action="Create">
+    <div class="form-row">
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.LessonTitle" class="control-label">Lesson Title</label>
+            <input placeholder="Your lesson title" asp-for="Lesson.LessonTitle" class="form-control" />
+            <span asp-validation-for="Lesson.LessonTitle " class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.ProjectName" class="control-label">Project Name</label>
+            <input placeholder="The project name" asp-for="Lesson.ProjectName" class="form-control" />
+            <span asp-validation-for="Lesson.ProjectName" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.Organization" class="control-label">DoE/DoE Branch</label>
+            <input placeholder="Department or Branch" asp-for="Lesson.Organization" class="form-control" />
+            <span asp-validation-for="Lesson.Organization" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.Abstract" class="control-label">Abstract</label>
+            <textarea placeholder="Quick summary of the lesson" asp-for="Lesson.Abstract" class="form-control"></textarea>
+            <span asp-validation-for="Lesson.Abstract" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+
+            <label style="font-weight:bold;" asp-for="Lesson.LessonsLearned" class="control-label">Lesson learned</label>
+            <textarea placeholder="The lesson learnt in detail" asp-for="Lesson.LessonsLearned" class="form-control" rows="7"></textarea>
+            <span asp-validation-for="Lesson.LessonsLearned" class="text-danger"></span>
+
+        </div>
+    </div>
+    <br />
+
+    @* /*risk and outcome */ *@
+    <div class="form-row">
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.Size" class="control-label">Size of Project (People)</label>
+            <input placeholder="How many involved?" asp-for="Lesson.Size" class="form-control" />
+            <span asp-validation-for="Lesson.Size" class="text-danger"></span>
+
+
+        </div>
+
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.ObjectiveAchievement" class="control-label">Project outcome</label>
+            <input placeholder="Success/Failure" asp-for="Lesson.ObjectiveAchievement" class="form-control" />
+            <span asp-validation-for="Lesson.ObjectiveAchievement" class="text-danger"></span>
+
+
+        </div>
+
+
+    </div>
+    @* start triple *@
+    <div class="form-row">
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.DateStart" class="control-label">Start date of Project</label>
+            <input asp-for="Lesson.DateStart" class="form-control" />
+            <span asp-validation-for="Lesson.DateStart" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.DateEnd" class="control-label">End date of Project</label>
+            <input asp-for="Lesson.DateEnd" class="form-control" />
+            <span asp-validation-for="Lesson.DateEnd" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.Budget" class="control-label">Budget</label>
+            <input placeholder="$50,000"asp-for="Lesson.Budget" class="form-control" />
+            <span asp-validation-for="Lesson.Budget" class="text-danger"></span>
+        </div>
+    </div>
+
+    @* Start triple *@
+
+    <div class="form-row">
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.Risk" class="control-label">Identifed risks</label>
+            <textarea placeholder="Risks identifed" asp-for="Lesson.Risk" class="form-control"></textarea>
+            <span asp-validation-for="Lesson.Risk" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.Technology" class="control-label">Technology/s</label>
+            <textarea placeholder="Technology used" asp-for="Lesson.Technology" class="form-control"></textarea>
+            <span asp-validation-for="Lesson.Technology" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label style="font-weight:bold;" asp-for="Lesson.Stakeholder" class="control-label">Stakeholder/s</label>
+            <textarea placeholder="Stakeholder/s" asp-for="Lesson.Stakeholder" class="form-control"></textarea>
+            <span asp-validation-for="Lesson.Stakeholder" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div>
+        <center>
+            <p>You are posting as: @UserManager.GetUserName(User)</p>
+            <span>
+                <a asp-action="Index">Back to List  </a><span>|</span><span class="form-group">
+                    <input type="submit" class="text-primary" value="Create" style="border: none; background-color:transparent; color:blue; margin-left:-8px;" />
+                </span>
+            </span>
+        </center>
+    </div>
+
+
+
+
+
+
+
+    <input asp-for="Lesson.UserId" value=@UserManager.GetUserId(User) hidden />
+
+ 
+</form>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    $(document).ready(function () {
+        $("#js-create").on("click", function () {
+            $.ajax({
+                method: "POST",
+                url: "/ratings/create",
+                data: { lessonId: "hi" },
+                success: function () { console.log("success") }
+            })
+
+        })
+    })
+</script>

@@ -1,0 +1,42 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index")" method="post" id="logoutForm" class="navbar-right">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            </li>
+            <li>
+                <button style="color:#f00;" onclick="slogout()" text-whtype="submit" class="btn btn-link nav-btn nav-link">Logout</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item"><a class="nav-link text-white"asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+        <li class="nav-item"><a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+    </ul>
+}
+
+<script>
+    function slogout() {
+        var user = confirm("You have logged out succesfully. Would you mind taking our user survey?");
+        if (user == true) {
+            
+            window.open("https://forms.gle/hcoEtWKw6wF8SwFS7")
+        } else {
+            alert("You have succesfully logged out!")
+        }
+
+       }
+       
+ 
+  
+
+</script>

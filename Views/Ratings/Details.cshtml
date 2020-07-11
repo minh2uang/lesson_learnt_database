@@ -1,0 +1,37 @@
+﻿@model Lessons_Learned_Database.Models.Rating
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RatingNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentityUser)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdentityUser.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lesson)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lesson.ProjectName)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

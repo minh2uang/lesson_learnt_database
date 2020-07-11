@@ -1,0 +1,173 @@
+﻿@model Lessons_Learned_Database.ViewModels.LessonIndexViewModel
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<partial name="_searchPartial" />
+<style>
+    a:hover {
+    text-decoration:none;
+    }
+</style>
+@foreach (var m in Model.lessons)
+{
+    double rate = 0;
+    int yourRatingNumber =0 ;
+
+    {
+        double count = 0;
+        foreach (var n in Model.ratings)
+        {
+            if (n.LessonId == m.LessonId)
+            {
+                rate = rate + (double)n.RatingNumber;
+                count++;
+            }
+
+        }
+        rate = System.Math.Round(rate / count, 2);
+    }
+    <div class="card">
+        <div class="row no-gutters">
+            
+            <div class="col-md-10 col-sm-10 col-xs-10">
+                <div class="card-body">
+                    <h5 class="card-title"><a asp-controller="Lessons" asp-action="Details" asp-route-id=@m.LessonId class="text-dark"><b>@m.LessonTitle</b></a></h5>
+                    <p style="margin-top:-10px; font-size:12px;" class="card-text">Project:<i> @m.ProjectName</i></p>
+                    <p class="card-text" style="margin-top:-10px;">@m.Abstract</p>
+                    <div class="js-rate mr-5" style="display:inline-flex">
+                        <a style="font-size:20px; margin-top:-25px;" class="mr-5" asp-action="create" asp-route-id="@m.LessonId" data-rate=@rate asp-controller="ratings">
+                            @for (int i = 0; i < 5; i++)
+                            {
+                                if (i < System.Math.Round(rate, 0))
+                                {
+                                    <span>&#9733</span>
+                                }
+                                else
+                                {
+                                    <span>&#9734</span>
+                                }
+
+                            } (@rate)
+                        </a>
+                    </div>
+
+                    @{
+                        var yourrating = Model.ratings.FirstOrDefault(c => c.LessonId == m.LessonId && c.IdentityUserId == UserManager.GetUserId(User));
+                        if (yourrating != null)
+                        {
+                            yourRatingNumber = yourrating.RatingNumber;
+                        }
+
+                    }
+                    <div data-islogin="@SignInManager.IsSignedIn(User)" data-yourrating=@yourRatingNumber data-lessonId="@m.LessonId" data-userId="@UserManager.GetUserId(User)" asp-action="create" asp-route-id="@m.LessonId" class="js-yourrate" data-rate=@rate asp-controller="ratings" style="display:none; max-width:300px">
+                        
+                        Your Rating :
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < yourRatingNumber)
+                            {
+                                <a style="font-size:20px" class="js-star mr-3" href="">&#9733</a>
+                            }
+                            else
+                            {
+                                <a style="font-size:20px" class="js-star mr-3" href="">&#9734</a>
+
+                            }
+
+                        }
+                    </div>
+                    <br />
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a href="" data-lesson-id=@m.LessonId class="card-link js-delete text-danger">Delete</a>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        $(".js-delete").on("click", function (event) {
+            event.preventDefault();
+            var button = $(this);
+            if (confirm("Do you want to delete?")) {
+                $.ajax({
+                    url: "/lessons/delete/" + $(this).attr("data-lesson-id"),
+                    method: "DELETE",
+                    success: function () {
+                        button.closest(".card").remove();
+                    }
+                })
+            }
+        })
+
+        $(".js-rate").on("click", function (event) {
+            event.preventDefault();
+            $(this).parent(".card-body").children(".js-yourrate").toggle();
+
+        });
+
+        $(".js-star").on("mouseenter", function (event) {
+            var currentIndex = $(this).index();
+            $(this).parent("div").children(".js-star").each(function () {
+                if ($(this).index() <= currentIndex) {
+                    $(this).html("&#9733");
+                } else {
+                    $(this).html("&#9734");
+                }
+            });
+
+          
+        })
+     
+
+        
+
+        $(".js-yourrate").on("mouseleave", function (event) {
+            var yourrating =  $(this).attr("data-yourrating");
+            $(this).children(".js-star").each(function () {
+                if ($(this).index() + 1 <= yourrating) {
+                             $(this).html("&#9733");                 
+                } else {
+                    $(this).html("&#9734");
+                }
+
+            })
+
+        })
+
+       
+        $(".js-star").on("click", function (event) {
+            event.preventDefault();
+            if ($(this).parent("div").attr("data-islogin") == "True") {
+                $.ajax({
+                    url: "/ratings/create",
+                    method: "POST",
+                    data: { 'rating.RatingNumber': $(this).index() + 1, 'rating.LessonId': $(this).parent("div").attr("data-lessonId"), 'rating.IdentityUserId': $(this).parent("div").attr("data-userId") },
+                    success: function () {
+                        console.log("success");
+                        location.reload();
+                    }
+                });
+
+            } else {
+                alert("You must login first");
+            }
+            
+        })
+
+
+    })
+
+
+
+
+</script>
